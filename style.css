@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #1a1a2e;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #f5f7fe;
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 2rem;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.location-date h1 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.location-date h1 i {
+    color: #667eea;
+    margin-right: 8px;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.25rem;
+}
+
+.sub-location {
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+.last-updated-badge {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 0.8rem;
+    color: #667eea;
+}
+
+/* Main Temperature Section */
+.main-temp-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 28px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.large-temp {
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+.temp-unit {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.weather-condition {
+    display: block;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.temp-details {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.detail-item {
+    background: rgba(255,255,255,0.2);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+}
+
+/* Section Title */
+.section-title {
+    margin: 1.5rem 0 1rem;
+}
+
+.section-title h3 {
+    font-size: 1.1rem;
+    color: #4a5568;
+}
+
+/* Forecast Scroll */
+.forecast-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    scrollbar-width: thin;
+}
+
+.forecast-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.forecast-scroll::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+.forecast-scroll::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.forecast-card {
+    min-width: 100px;
+    background: white;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-4px);
+}
+
+.forecast-day {
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.forecast-icon {
+    font-size: 1.8rem;
+    margin: 8px 0;
+}
+
+.forecast-temp {
+    font-weight: 700;
+    color: #2d3748;
+}
+
+/* Two Column Layout */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.metric-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: all 0.2s;
+}
+
+.metric-card:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+.metric-icon i {
+    font-size: 1.8rem;
+    color: #667eea;
+}
+
+.metric-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #718096;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.unit-sm {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #a0aec0;
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.sidebar-card h4 {
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-card h4 i {
+    color: #667eea;
+}
+
+/* Sun Times */
+.sun-times {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sun-item {
+    text-align: center;
+}
+
+.sun-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #718096;
+    text-transform: uppercase;
+}
+
+.sun-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Moon Info */
+.moon-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.moon-icon-large {
+    font-size: 3rem;
+}
+
+.moon-name {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
+
+.moon-illum {
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+/* AQI Card Detail */
+.aqi-card-detail {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.aqi-card-detail h4 {
+    color: white;
+}
+
+.aqi-level-large {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.aqi-value-large {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.aqi-description {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    margin: 0.5rem 0;
+}
+
+.pm-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 0.5rem;
+}
+
+/* Get App Card */
+.get-app-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.2rem;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.get-app-card i {
+    font-size: 2rem;
+    color: #667eea;
+    margin-bottom: 8px;
+}
+
+.get-app-card p {
+    font-size: 0.8rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+.app-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.app-btn:hover {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #718096;
+}
+
+.update-time {
+    margin-top: 8px;
+    font-size: 0.65rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    body {
+        padding: 1rem;
+    }
+    .dashboard {
+        padding: 1rem;
+    }
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+    .large-temp {
+        font-size: 3.5rem;
+    }
+    .temp-unit {
+        font-size: 1.2rem;
+    }
+}

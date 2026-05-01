@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Jagannath Kishore College · Live Weather Station</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="dashboard">
+    <div class="header">
+        <div class="location-date">
+            <h1><i class="fas fa-map-marker-alt"></i> Jagannath Kishore College</h1>
+            <p class="date" id="currentDate">Loading...</p>
+            <p class="sub-location">Purulia, West Bengal 723101</p>
+        </div>
+        <div class="last-updated-badge"><i class="fas fa-sync-alt"></i> <span id="refreshHint">Connecting...</span></div>
+    </div>
+
+    <div class="main-temp-section">
+        <div class="temp-display">
+            <span class="large-temp" id="mainTemp">--</span><span class="temp-unit">°C</span>
+            <span class="weather-condition" id="weatherCondition">--</span>
+        </div>
+        <div class="temp-details">
+            <div class="detail-item"><i class="fas fa-arrow-up"></i> Day <span id="dayHigh">--</span>°C</div>
+            <div class="detail-item"><i class="fas fa-arrow-down"></i> Night <span id="nightLow">--</span>°C</div>
+            <div class="detail-item"><i class="fas fa-temperature-low"></i> Feels <span id="feelsLike">--</span>°C</div>
+        </div>
+    </div>
+
+    <div class="section-title"><h3><i class="fas fa-calendar-week"></i> Weekly Forecast</h3></div>
+    <div class="forecast-scroll" id="forecastContainer">Loading forecast...</div>
+
+    <div class="two-columns">
+        <div class="metrics-grid">
+            <div class="metric-card"><div class="metric-icon"><i class="fas fa-tint"></i></div><div class="metric-info"><span class="metric-label">Humidity</span><span class="metric-value" id="humidityVal">--<span class="unit-sm">%</span></span></div></div>
+            <div class="metric-card"><div class="metric-icon"><i class="fas fa-gauge-high"></i></div><div class="metric-info"><span class="metric-label">Pressure</span><span class="metric-value" id="pressureVal">--<span class="unit-sm"> mb</span></span></div></div>
+            <div class="metric-card"><div class="metric-icon"><i class="fas fa-wind"></i></div><div class="metric-info"><span class="metric-label">Wind Speed</span><span class="metric-value" id="windInfo">--<span class="unit-sm"> km/h</span></span></div></div>
+            <div class="metric-card"><div class="metric-icon"><i class="fas fa-cloud-rain"></i></div><div class="metric-info"><span class="metric-label">Rain</span><span class="metric-value" id="rainVal">--<span class="unit-sm"> mm/h</span></span></div></div>
+            <div class="metric-card"><div class="metric-icon"><i class="fas fa-smog"></i></div><div class="metric-info"><span class="metric-label">CO Level</span><span class="metric-value" id="coVal">--<span class="unit-sm"> ppm</span></span></div></div>
+            <div class="metric-card"><div class="metric-icon"><i class="fas fa-industry"></i></div><div class="metric-info"><span class="metric-label">NO₂ Level</span><span class="metric-value" id="no2Val">--<span class="unit-sm"> ppb</span></span></div></div>
+            <div class="metric-card"><div class="metric-icon"><i class="fas fa-microscope"></i></div><div class="metric-info"><span class="metric-label">PM2.5</span><span class="metric-value" id="pm25val">--<span class="unit-sm"> µg/m³</span></span></div></div>
+            <div class="metric-card"><div class="metric-icon"><i class="fas fa-leaf"></i></div><div class="metric-info"><span class="metric-label">AQI</span><span class="metric-value" id="aqiValue">--</span></div></div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-card"><h4><i class="fas fa-sun"></i> Sunrise & Sunset</h4><div class="sun-times"><div class="sun-item"><span class="sun-label">Sunrise</span><span class="sun-value" id="sunriseTime">--</span></div><div class="sun-item"><span class="sun-label">Sunset</span><span class="sun-value" id="sunsetTime">--</span></div></div></div>
+            <div class="sidebar-card"><h4><i class="fas fa-moon"></i> Moon Phase</h4><div class="moon-info"><div class="moon-icon-large">🌙</div><div><div class="moon-name" id="moonPhaseName">--</div><div class="moon-illum">Illumination: <span id="moonIllum">--</span>%</div></div></div></div>
+            <div class="sidebar-card aqi-card-detail"><h4><i class="fas fa-chart-line"></i> Air Quality Index</h4><div class="aqi-level-large" id="aqiLevel">--</div><div class="aqi-value-large"><span id="aqiValueLarge">--</span> AQI</div><div class="aqi-description" id="aqiDesc">--</div><div class="pm-details"><span>PM2.5: <span id="pm25valSide">--</span> µg/m³</span><span>PM10: <span id="pm10valSide">--</span> µg/m³</span></div></div>
+            <div class="sidebar-card"><h4><i class="fas fa-allergies"></i> Health & Activities</h4><p id="pollenInfo"><i class="fas fa-seedling"></i> --</p></div>
+            <div class="get-app-card"><i class="fas fa-cloud-sun-rain"></i><p>Live Weather Station</p><button class="app-btn" id="refreshBtn"><i class="fas fa-sync-alt"></i> Refresh Data</button></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="college-footer"><i class="fas fa-microchip"></i> Jagannath Kishore College · Purulia · Live Data</div>
+        <div class="update-time" id="updateTimestamp">Last update: --</div>
+        <div class="designer-credit"><i class="fas fa-code"></i> Designed by Sudip Mahato <i class="fas fa-heart" style="color:#e53e3e; font-size:0.65rem;"></i></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
